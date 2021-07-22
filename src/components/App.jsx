@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react'
 import Card from './layout/Card';
-import Data from './Data'
+import Data from './layout/Data'
 
 
 export default (props) => (
@@ -20,6 +20,7 @@ export default (props) => (
             <Card id='10' />
             <Card id='11' />
             <Card id='12' />
+
 
 
         </div>

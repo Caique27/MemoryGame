@@ -1,0 +1,22 @@
+div#display{
+    border: 3px solid white; 
+    border-radius: 10%;
+    margin: auto;
+    width: 75%;
+    height: 7rem;
+}
+div#pointCircle{
+    border: 3px solid white; 
+    border-radius: 100%;
+    margin: auto;
+    width: 6.8rem;
+    height: 6.8rem;
+    text-align: center;
+    font-size: 2rem;
+    
+}
+div#points{
+    position: absolute;
+    top: 2.5rem;
+    left: 48.5%;
+}

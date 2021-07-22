@@ -1,10 +1,11 @@
 import React from 'react'
 import './card.css'
+import minhaImagem from '../data/images/cardback.jpg'
 export default props => (
 
     <div id='Card' >
-        <img src="/images/cardback.jpg" alt="back" />
-        Carta nº {props.id}
+        <img src={minhaImagem} alt="back" />
+
     </div>
 
 );
