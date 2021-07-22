@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+    color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Cards{
+    display: flex;/*o componente se ajusta a tela*/
+    flex-flow: row wrap;/*permite a quebra de linha no componente*/
+    justify-content: space-around;
+    margin: 2rem;
+    
+}
+div#display{
+    border: 3px solid white; 
+    border-radius: 10%;
+    margin: auto;
+    width: 75%;
+    height: 3.2rem;
+}
+div#points{
+    border: 3px solid white; 
+    border-radius: 100%;
+    margin: auto;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+}
