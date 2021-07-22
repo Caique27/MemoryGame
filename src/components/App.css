@@ -2,6 +2,8 @@ body{
     background-color: black;
     color: antiquewhite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(./data/images/bodybackground.jpg);
+    background-size: cover;
 }
 
 .Cards{
