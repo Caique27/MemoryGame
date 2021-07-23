@@ -8,18 +8,19 @@ div#display{
     background-size: cover;
 }
 div#pointCircle{
-    border: 2px solid white; 
+    border: 1px solid white; 
     border-radius: 100%;
     margin: auto;
     width: 5.5rem;
     height: 5.5rem;
     text-align: center;
     font-size: 2rem;
-    background-image: url(../data/images/pointsbackground.jpg);
-    background-size: cover;
-    background-position:47% ;
+    background-image: url(../data/images/pointbackground.jpg);
+    background-size: 160%;
+    background-position:52% 41% ;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 300;
+    font-size: 2rem;
     color: white;
     text-shadow: 2px 2px black;
 }
