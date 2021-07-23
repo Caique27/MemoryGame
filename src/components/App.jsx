@@ -2,7 +2,9 @@ import './App.css'
 import React from 'react'
 import Card from './layout/Card';
 import Data from './layout/Data'
-
+function logar() {
+    console.log('rage')
+}
 
 export default (props) => (
     <>
