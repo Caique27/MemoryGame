@@ -3,6 +3,7 @@ import React from 'react'
 import Card from './layout/Card';
 import Data from './layout/Data'
 
+
 export default (props) => (
     <>
         <Data points='4' />
