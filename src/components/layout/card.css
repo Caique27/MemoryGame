@@ -4,9 +4,18 @@ div#Card{
     border: 3px solid white; 
     border-radius: 10px;
     margin-top: 1rem;
+    background-color: azure;
+    
+    
 }
-img{
+.cardback{
     border-radius: 10px;
     width:100%;
-    height:100%;
+    
+    
+}
+img:hover{opacity: 0.8;}
+
+div#Card:hover{
+    border-color: blue;
 }

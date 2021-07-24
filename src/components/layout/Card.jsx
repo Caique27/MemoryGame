@@ -7,8 +7,9 @@ export default props => (
 
 
 
-    <div id='Card'  >
-        <img src={minhaImagem} alt="back" />
+    <div id='Card' >
+        <div id='white'></div>
+        <img src={minhaImagem} alt="back" className='cardback' />
 
     </div>
 
