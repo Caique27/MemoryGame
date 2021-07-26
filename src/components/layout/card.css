@@ -17,6 +17,6 @@ div#Card{
 img:hover{opacity: 0.8;}
 
 div#Card:hover{
-    border-color: rgb(87, 0, 173);
-
+    border-color: blueviolet;
+    background-color: blueviolet;
 }
