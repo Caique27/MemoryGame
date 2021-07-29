@@ -7,7 +7,8 @@ export default props => (
 
 
 
-    <div id='Card' >
+    <div id='Card'
+        onClick={props.handleClick} >
         <div id='white'></div>
         <img src={minhaImagem} alt="back" className='cardback' />
 
