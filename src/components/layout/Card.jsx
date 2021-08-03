@@ -1,16 +1,15 @@
 import React from 'react'
 import './card.css'
-import minhaImagem from '../data/images/cardback.jpg'
+
 
 export default props => (
 
 
 
 
-    <div id='Card'
-        onClick={props.handleClick} >
+    <div id='Card' onClick={props.handleClick} >
         <div id='white'></div>
-        <img src={minhaImagem} alt="back" className='cardback' />
+        <img src={props.image} alt="back" className='cardback' />
 
     </div>
 
