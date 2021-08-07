@@ -7,9 +7,9 @@ body{
 }
 
 .Cards{
-    display: flex;/*o componente se ajusta a tela*/
-    flex-flow: row wrap;/*permite a quebra de linha no componente*/
-    justify-content: space-around;
-    margin: 2rem;
+    display: flex;/*components adjust to the screen*/
+    flex-flow: row wrap;
+    justify-content: space-around;/*horizontal space between cards */ 
+    margin: 2rem;/* margin between cards*/ 
     
 }

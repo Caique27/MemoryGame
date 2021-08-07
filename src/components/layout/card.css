@@ -11,8 +11,8 @@ div#Card{
 .cardback{
     border-radius: 10px;
     width:100%;
-    
-    
+    -webkit-user-drag: none;/*avoid image dragging */ 
+    user-select: none;/*avoid HTML highlighting */ 
 }
 img:hover{opacity: 0.9;}
 

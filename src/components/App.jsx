@@ -10,9 +10,9 @@ var FlippedCards = []
 
 const App = () => {
 
-
-
     const [image, setImage] = useState([i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]);
+    const [points, setPoints] = useState(0)
+
     const clicar = (par) => {
         if (GameState == 'waiting') {
 
@@ -20,9 +20,6 @@ const App = () => {
             if (im[par] == i1) {
                 im[par] = i2
                 FlippedCards.push(par)
-            } else {
-                im[par] = i1
-
             }
             setImage([im[0], im[1], im[2], im[3], im[4], im[5]
                 , im[6], im[7], im[8], im[9], im[10], im[11]])
@@ -44,9 +41,6 @@ const App = () => {
             FlippedCards = []
             GameState = 'waiting'
         }, 500);
-
-
-
     }
     return <>
         <Data points='4' />
