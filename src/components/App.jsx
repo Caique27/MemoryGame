@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import Card from './layout/Card';
 import Data from './layout/Data'
 import i1 from './data/images/cardback.jpg'
-import i2 from './data/images/answers/orion-image.jpg'
+import imgs from './images'
+
 
 /* Variable config */
 var im = [i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]
@@ -11,6 +12,23 @@ var GameState = 'waiting'
 var FlippedCards = []
 var hid = ['un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un']
 var matched = false
+
+console.log(imgs)
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+shuffleArray(imgs)
+console.log(imgs)
+
+/* end of variable config*/
+
+
 
 const App = () => {
 
@@ -22,7 +40,7 @@ const App = () => {
     const clicar = (par) => {
         if (GameState == 'waiting') {
             if (im[par] == i1) {
-                im[par] = i2
+                im[par] = imgs[par]
                 FlippedCards.push(par)
             }
             setImage([im[0], im[1], im[2], im[3], im[4], im[5],
