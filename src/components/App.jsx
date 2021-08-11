@@ -4,6 +4,7 @@ import Card from './layout/Card';
 import Data from './layout/Data'
 import i1 from './data/images/cardback.jpg'
 import imgs from './images'
+import Feedback from './layout/Feedback'
 
 
 
@@ -37,10 +38,6 @@ function shuffle(array) {
 // Used like so
 
 shuffle(images);
-console.log(images);
-
-console.log(imgs)
-console.log(images)
 
 
 /* end of variable config*/
@@ -52,19 +49,25 @@ const App = () => {
     const [image, setImage] = useState([i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]);
     const [hiddens, setHiddens] = useState([])
     const [points, setPoints] = useState(0)
+    const [moves, setMoves] = useState(0)
+    const [finished, setFinished] = useState('no')
 
+    console.log(finished)
 
     const clicar = (par) => {
+
         if (GameState == 'waiting') {
             if (im[par] == i1) {
                 im[par] = images[par]
                 FlippedCards.push(par)
+
             }
             setImage([im[0], im[1], im[2], im[3], im[4], im[5],
             im[6], im[7], im[8], im[9], im[10], im[11]])
 
 
             if (FlippedCards.length > 1) {
+                setMoves(moves + 1)
                 Unflip(par)
                 GameState = 'processing'
             }
@@ -109,6 +112,10 @@ const App = () => {
                     , im[6], im[7], im[8], im[9], im[10], im[11]])
                 FlippedCards = []
                 setPoints(points + 1)
+                if (points == 5) {
+                    setFinished('yes')
+                    console.log(finished)
+                }
                 GameState = 'waiting'
 
 
@@ -118,7 +125,7 @@ const App = () => {
         }
     }
     return <>
-        <Data points={points} />
+        <Data points={points} moves={moves} />
         <div className='Cards' >
             <Card id='0' handleClick={() => clicar(0)} image={image[0]} status={hiddens[0]} />
             <Card id='1' handleClick={() => clicar(1)} image={image[1]} status={hiddens[1]} />
@@ -133,7 +140,7 @@ const App = () => {
             <Card id='10' handleClick={() => clicar(10)} image={image[10]} status={hiddens[10]} />
             <Card id='11' handleClick={() => clicar(11)} image={image[11]} status={hiddens[11]} />
 
-
+            <Feedback moves={moves} game={finished} />
 
         </div>
     </>

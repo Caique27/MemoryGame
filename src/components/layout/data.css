@@ -30,3 +30,23 @@ div#points{
     top: 2.2rem;
     left: 48.39%;
 }
+div#moves{
+    background-color: blue;
+    border: 2px solid white;
+    border-radius: 10%;
+    width:11rem;
+    height:2.4rem;
+    position: absolute;
+    top: 1.9rem;
+    left:25%;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    
+    padding-top: 0.4rem;
+    background-image: url(../data/images/movesbackground.jpg);
+}

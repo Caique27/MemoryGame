@@ -6,6 +6,9 @@ export default props => (
         <div id='pointCircle' >
             <div id='points'>{props.points}/6</div>
         </div>
+        <div id='moves'>
+            Moves: {props.moves}
+        </div>
     </div>
 
 );
