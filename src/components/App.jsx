@@ -6,25 +6,42 @@ import i1 from './data/images/cardback.jpg'
 import imgs from './images'
 
 
+
 /* Variable config */
+const answers = imgs
+var images = [imgs[3], imgs[1], imgs[11], imgs[4], imgs[6], imgs[2], imgs[5], imgs[10], imgs[0], imgs[7], imgs[8], imgs[9]]
 var im = [i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]
 var GameState = 'waiting'
 var FlippedCards = []
 var hid = ['un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un', 'un']
 var matched = false
 
-console.log(imgs)
+function shuffle(array) {
+    var currentIndex = array.length, randomIndex;
 
-function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
     }
+
+    return array;
 }
-shuffleArray(imgs)
+
+// Used like so
+
+shuffle(images);
+console.log(images);
+
 console.log(imgs)
+console.log(images)
+
 
 /* end of variable config*/
 
@@ -40,7 +57,7 @@ const App = () => {
     const clicar = (par) => {
         if (GameState == 'waiting') {
             if (im[par] == i1) {
-                im[par] = imgs[par]
+                im[par] = images[par]
                 FlippedCards.push(par)
             }
             setImage([im[0], im[1], im[2], im[3], im[4], im[5],
@@ -53,8 +70,24 @@ const App = () => {
             }
         }
     }
+    function CheckMatch() {
+        // console.log(FlippedCards)
+        //.log('the card images are:', images)
+        // console.log('the answers are:', answers)
+        if (answers.indexOf(images[FlippedCards[0]]) + 6 == answers.indexOf(images[FlippedCards[1]]) ||
+            answers.indexOf(images[FlippedCards[0]]) - 6 == answers.indexOf(images[FlippedCards[1]])) {
+            return true
+        } else {
+            return false
+        }
+
+
+    }
+
+
+
     function Unflip(par) {
-        if (false) {
+        if (CheckMatch() == false) {
             setTimeout(function () {
 
                 im = [i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]
@@ -62,11 +95,11 @@ const App = () => {
                     , im[6], im[7], im[8], im[9], im[10], im[11]])
                 FlippedCards = []
                 GameState = 'waiting'
-            }, 500);
+            }, 800);
         } else {
             setTimeout(function () {
 
-                console.log(FlippedCards)
+
                 for (var c = 0; c < FlippedCards.length; c += 1) {
                     hid[FlippedCards[c]] = 'hid'
                 }
