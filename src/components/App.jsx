@@ -47,7 +47,7 @@ shuffle(images);
 const App = () => {
 
     const [image, setImage] = useState([i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]);
-    const [hiddens, setHiddens] = useState([])
+    const [hiddens, setHiddens] = useState([hid[0], hid[1], hid[2], hid[3], hid[4], hid[5], hid[6], hid[7], hid[8], hid[9], hid[10], hid[11]])
     const [points, setPoints] = useState(0)
     const [moves, setMoves] = useState(0)
     const [finished, setFinished] = useState('no')
@@ -56,14 +56,24 @@ const App = () => {
 
     const clicar = (par) => {
 
+
+
+
         if (GameState == 'waiting') {
             if (im[par] == i1) {
                 im[par] = images[par]
                 FlippedCards.push(par)
+                hid[par] = 'flipped'
+
+
 
             }
-            setImage([im[0], im[1], im[2], im[3], im[4], im[5],
-            im[6], im[7], im[8], im[9], im[10], im[11]])
+            setTimeout(function () {
+                setImage([im[0], im[1], im[2], im[3], im[4], im[5],
+                im[6], im[7], im[8], im[9], im[10], im[11]]);
+            }, 100);
+
+            setHiddens([hid[0], hid[1], hid[2], hid[3], hid[4], hid[5], hid[6], hid[7], hid[8], hid[9], hid[10], hid[11]])
 
 
             if (FlippedCards.length > 1) {
@@ -90,14 +100,28 @@ const App = () => {
 
 
     function Unflip(par) {
+
+        console.log(FlippedCards)
         if (CheckMatch() == false) {
             setTimeout(function () {
 
                 im = [i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]
-                setImage([im[0], im[1], im[2], im[3], im[4], im[5]
-                    , im[6], im[7], im[8], im[9], im[10], im[11]])
+                setTimeout(function () {
+                    setImage([im[0], im[1], im[2], im[3], im[4], im[5],
+                    im[6], im[7], im[8], im[9], im[10], im[11]]);
+                }, 100);
+
+
+
+                for (var c = 0; c < FlippedCards.length; c += 1) {
+                    hid[FlippedCards[c]] = 'un'
+                }
+
                 FlippedCards = []
                 GameState = 'waiting'
+
+
+                setHiddens([hid[0], hid[1], hid[2], hid[3], hid[4], hid[5], hid[6], hid[7], hid[8], hid[9], hid[10], hid[11]])
             }, 800);
         } else {
             setTimeout(function () {
@@ -106,6 +130,9 @@ const App = () => {
                 for (var c = 0; c < FlippedCards.length; c += 1) {
                     hid[FlippedCards[c]] = 'hid'
                 }
+
+
+
                 setHiddens([hid[0], hid[1], hid[2], hid[3], hid[4], hid[5], hid[6], hid[7], hid[8], hid[9], hid[10], hid[11]])
                 im = [i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1, i1]
                 setImage([im[0], im[1], im[2], im[3], im[4], im[5]
@@ -113,8 +140,11 @@ const App = () => {
                 FlippedCards = []
                 setPoints(points + 1)
                 if (points == 5) {
-                    setFinished('yes')
-                    console.log(finished)
+                    setTimeout(function () {
+                        setFinished('yes')
+                    }, 350);
+
+
                 }
                 GameState = 'waiting'
 

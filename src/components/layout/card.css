@@ -1,10 +1,12 @@
-div#Card{
+.un{
     height: 12%;
     width: 14%;
     border: 3px solid white; 
     border-radius: 10px;
-    margin-top: 1.5%;
+    margin-top: 17px;
     background-color: azure;
+    transition-duration: .3s;
+    
     
     
 }
@@ -13,6 +15,7 @@ div#Card{
     width:100%;
     -webkit-user-drag: none;/*avoid image dragging */ 
     user-select: none;/*avoid HTML highlighting */ 
+    transform: rotateY(180deg);
 }
 img:hover{opacity: 0.9;}
 
@@ -21,5 +24,25 @@ div#Card:hover{
     background-color: blueviolet;
 }
 .hid{
+    height: 12%;
+    width: 14%;
+    border: 3px solid white; 
+    border-radius: 10px;
+    margin-top: 17px;
+    background-color: azure;
+    transition-duration: .3s;
     visibility: hidden;
+}
+.flipped{
+    height: 12%;
+    width: 14%;
+    border: 3px solid white; 
+    border-radius: 10px;
+    margin-top: 6px;
+    
+    background-color: azure;
+    transform: rotateY(180deg);
+    transition-duration: .3s;
+    
+    
 }

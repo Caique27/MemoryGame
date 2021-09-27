@@ -8,7 +8,9 @@ body{
 
 .Cards{
     display: flex;/*components adjust to the screen*/
-    flex-flow: row wrap;
+    flex-direction: row ;
+    flex-wrap:  wrap ;
+    align-self: flex-start;
     justify-content: space-around;/*horizontal space between cards */ 
     margin: 2rem;/* margin between cards*/ 
     
